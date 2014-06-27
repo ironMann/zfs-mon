@@ -1,0 +1,12 @@
+Source: zfs-mon
+Section: unknown
+Priority: extra
+Maintainer: Gvozden Neskovic <neskovic@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev
+Standards-Version: 3.9.3
+Homepage: <insert the upstream URL, if relevant>
+
+Package: zfs-mon
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: ZFS monitoring tools

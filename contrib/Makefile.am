@@ -1,4 +1,3 @@
-
 SQLITE3_CFLAGS  = -DSQLITE_DEFAULT_AUTOVACUUM=1
 SQLITE3_CFLAGS += -DSQLITE_DEFAULT_FOREIGN_KEYS=1
 SQLITE3_CFLAGS += -DSQLITE_DEFAULT_PAGE_SIZE=4096
@@ -10,6 +9,9 @@ SQLITE3_CFLAGS += -DSQLITE_ENABLE_MEMORY_MANAGEMENT
 
 noinst_LTLIBRARIES += libsqlite3.la
 
-libsqlite3_la_SOURCES = contrib/sqlite3.c
+libsqlite3_la_SOURCES = contrib/sqlite3.c \
+                        contrib/sqlite3.h \
+                        contrib/sqlite3ext.h
+
 libsqlite3_la_LIBADD =
 libsqlite3_la_CFLAGS = $(SQLITE3_CFLAGS)

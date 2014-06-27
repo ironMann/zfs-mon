@@ -10,16 +10,25 @@ AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE
 PKG_PROG_PKG_CONFIG
 LT_PREREQ([2.2])
-LT_INIT([dlopen])
-
-
-# fixup some flags
+LT_INIT([dlopen disable-static])
 
 
 # Checks for programs.
 AC_PROG_INSTALL
 AC_PROG_CC
 AC_PROG_LIBTOOL
+
+# Other tools used in this package's various make scripts
+AC_PATH_PROG([TAR], [tar gtar])   # tar
+AC_PATH_PROG([XARGS], [xargs])    # xargs
+AC_PATH_PROG([CHMOD], [chmod])    # chmod
+AC_PATH_PROG([CAT], [cat])        # cat
+AC_PATH_PROG([ECHO], [echo])      # echo
+AC_PATH_PROG([CP], [cp])          # cp
+AC_PATH_PROG([DATE], [date])      # date
+AC_PATH_PROG([MV], [mv])          # mv
+AC_PATH_PROG([TEST], [test])
+AC_PATH_PROG([DEBUILD], [dpkg-buildpackage], [notfound])
 
 AC_LANG([C])
 
