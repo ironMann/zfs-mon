@@ -2,6 +2,9 @@
  * Copyright (c) 2014, Gvozden Neskovic <neskovic@compeng.uni-frankfurt.de>
  */
 
+#ifndef ZFSPOOL_METRICS_H
+#define ZFSPOOL_METRICS_H
+
 struct zfsmon;
 
 void zfsmon_zpool_metric_reg_health(apr_pool_t *p, const char *zpool_name, Ganglia_25metric *gmi);
@@ -21,3 +24,7 @@ void zfsmon_zpool_metric_get_capacity(struct zfsmon *h, const char *zpool_name, 
 void zfsmon_zpool_metric_get_dedupratio(struct zfsmon *h, const char *zpool_name, g_val_t *val);
 void zfsmon_zpool_metric_get_iostat_rd(struct zfsmon *h, const char *zpool_name, g_val_t *val);
 void zfsmon_zpool_metric_get_iostat_wr(struct zfsmon *h, const char *zpool_name, g_val_t *val);
+
+
+
+#endif /* ZFSPOOL_METRICS_H */

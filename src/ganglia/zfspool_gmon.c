@@ -1,6 +1,7 @@
 /**
  * Copyright (c) 2014, Gvozden Neskovic <neskovic@compeng.uni-frankfurt.de>
  */
+
 #include <config.h>
 
 #include <gm_metric.h>
@@ -8,7 +9,6 @@
 #include <time.h>
 #include <string.h>
 
-#include <zpool.h>
 #include <zfsmon.h>
 
 #include "zfspool_metrics.h"
@@ -192,8 +192,6 @@ g_val_t zfsmon_metric_handler(int metric_index)
     zfsmon_zpool_metrics[zpool_m_idx].get(&zfsmon, req_name, &v);
 
     pthread_mutex_unlock(&pools_l);
-
-    // debug_msg("zfsmon_metric_handler: done %lf", v.d);
 
     return v;
 }
