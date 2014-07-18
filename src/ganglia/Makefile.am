@@ -12,3 +12,6 @@ libzfsgmon_la_CFLAGS  = $(AM_CFLAGS) -I/usr/include/apr-1.0
 libzfsgmon_la_LDFLAGS = -no-undefined
 libzfsgmon_ladir      = $(sysconfdir)/zfsmon
 libzfsgmon_la_DATA    = conf/mod_zfsmon.conf
+
+
+dist_bin_SCRIPTS = src/ganglia/zfs_gmetric.py
