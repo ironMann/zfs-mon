@@ -15,7 +15,7 @@ DEBUG = True if len(sys.argv) == 2 and str(sys.argv[1]) == 'debug' else False
 
 """Tools and files used."""
 IOSTAT_DB   = '/var/lib/zfs-mon/zpool_iostat.pydb'
-ZPOOL_CMD   = '/usr/sbin/zpool'
+ZPOOL_CMD   = '/usr/local/sbin/zpool'
 GMETRIC_CMD = '/usr/bin/gmetric'
 
 ZFSMON_METRICS = {
@@ -117,6 +117,7 @@ if do_iostat and os.access(IOSTAT_DB, os.F_OK) and not os.access(IOSTAT_DB, os.W
 """Check if zpool tools exist."""
 if do_props and not os.access(ZPOOL_CMD, os.F_OK | os.X_OK):
     do_props = False
+    print "zpool command not found in ", ZPOOL_CMD
 
 
 """
